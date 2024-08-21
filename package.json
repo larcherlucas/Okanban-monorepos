@@ -1,0 +1,16 @@
+{
+  "name": "okanban",
+  "version": "1.0.0",
+  "description": "Monorepo of Okanban using Vue 2",
+  "scripts": {
+    "db:setup": "cp ./apps/backend/.env.example ./apps/backend/.env && pnpm --filter backend db:reset",
+    "dev": "concurrently \"pnpm dev:front\" \"pnpm dev:back\"",
+    "dev:front": "pnpm --filter frontend dev",
+    "dev:back": "pnpm --filter backend dev"
+  },
+  "author": "enzo.testa@oclock.io",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

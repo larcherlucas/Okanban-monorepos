@@ -1,0 +1,40 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "O'Kanban backend",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "build": "browserify -e client/app.js -o public/js/bundle.js",
+    "start": "node index.js",
+    "db:create": "psql -f ./data/create_role_and_database.sql",
+    "db:table": "psql -U okanban -d okanban -f ./data/create_tables.sql",
+    "db:seed": "psql -U okanban -d okanban -f ./data/seed_database.sql",
+    "db:reset": "npm run db:table && npm run db:seed",
+    "test": "jest"
+  },
+  "keywords": [
+    "okanban",
+    "gestion de projet"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.4",
+    "frisby": "^2.1.3",
+    "jest": "^29.7.0",
+    "pg": "^8.11.3",
+    "sanitize-html": "^2.11.0",
+    "sequelize": "^6.34.0",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
