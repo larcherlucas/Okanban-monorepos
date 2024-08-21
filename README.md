@@ -22,7 +22,7 @@ Petite démonstration des technologies suivantes :
     - le serveur se lance alors sur le port `3000`
     - et le client sur le port `5173`
 
-# Amélioration pour une V3
+# Amélioration pour une V2
 - Utilisation de sqitch 
 - Création d'une feature connexion
 - Importation de securité back et front (JWT, Bcrypt, Cors, RateLimite, Joi, Formik...)
